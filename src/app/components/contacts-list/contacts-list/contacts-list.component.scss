@@ -1,0 +1,30 @@
+.tabs{
+    margin-top: 30px;
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    li{
+        padding-left: 15px;
+        font-size: 18px;
+    }
+    span{
+        color: #c3c3c3;
+        cursor: pointer;
+    }
+    .active span{
+        color: black!important;
+    }
+}
+.fixed{
+    position: fixed!important;
+}
+.details{
+    width: 40vw;
+    @media (max-width: 700px) {
+        width: 60vw;
+    }
+    @media (max-width: 600px) {
+        width: 100vw;
+    }
+}

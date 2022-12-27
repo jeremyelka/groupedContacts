@@ -1,0 +1,18 @@
+<mat-drawer-container autosize>
+    <mat-drawer #drawer class="fixed details" mode="side" position="end">
+        <app-contact-details (closeEvent)="drawer.close();"></app-contact-details>
+    </mat-drawer>
+    <div class="p-9">
+        <h1 class="text-3xl font-extrabold">{{title}}</h1>
+        <h4>{{allContactlength}} contacts</h4>
+        <div class="tabs">
+            <ngx-tabset  [disableStyle]="true">
+                <ngx-tab *ngFor="let tab of tabs" tabTitle="{{tab}}">
+                    <ng-container *ngFor="let user of aplhabeticList[tab] | sortByAlphabet:'name':'last';">
+                        <app-contact-preview (click)="inserContact(user);drawer.open();" [user]="user"></app-contact-preview>
+                    </ng-container>
+                </ngx-tab>
+            </ngx-tabset>
+        </div>
+    </div>
+</mat-drawer-container>
